@@ -1,11 +1,11 @@
 export const environment = {
   firebase: {
-    projectId: 'pruebaapp-7bd90',
-    appId: '1:1025310525591:web:fd0ba9273535f480c9c1d2',
-    storageBucket: 'pruebaapp-7bd90.appspot.com',
-    apiKey: 'AIzaSyC8OoKpkynqqcqTiSi-EFd5eEchrWFFqPg',
-    authDomain: 'pruebaapp-7bd90.firebaseapp.com',
-    messagingSenderId: '1025310525591',
+    apiKey: "AIzaSyCVX7WL0WWKssyXl8FOJmcts_8OqbYUspk",
+    authDomain: "relevamientovisual-5ca51.firebaseapp.com",
+    projectId: "relevamientovisual-5ca51",
+    storageBucket: "relevamientovisual-5ca51.appspot.com",
+    messagingSenderId: "819013315915",
+    appId: "1:819013315915:web:8c93579911f1457753ccce"
   },
   production: true
 };
