@@ -1,0 +1,226 @@
+.contenedor {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  --background: radial-gradient(circle at 50% -20.71%, #d7c35d 0, #deba54 8.33%, #e4b04d 16.67%, #e9a546 25%, #ed9841 33.33%, #f0893e 41.67%, #f2793c 50%, #f3673d 58.33%, #f35542 66.67%, #f34249 75%, #f22b52 83.33%, #f0065d 91.67%, #ec0069 100%);
+  --overflow: hidden !important;
+  --overscroll-behavior-y: none !important;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+
+@media screen and (orientation: landscape) {
+  ion-content {
+    --overflow: auto !important;
+    --overscroll-behavior-y: contain !important;
+  }
+}
+
+//titulo
+@import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
+
+@keyframes blink {
+
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+
+    text-shadow: 0 0 2px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 20px #ff0000, 0 0 20px #ff0000, 0 0 10px #ff0000, 0 0 10px #ff0000;
+    color: #ffffff;
+  }
+}
+
+.titlei {
+  font-size: 50px;
+  font-family: 'Roses Bolero', sans-serif;
+  font-weight: 600px;
+  text-align: center;
+  animation: blink 2s infinite;
+  -webkit-animation: blink 2s infinite;
+  background: transparent;
+}
+
+
+.alert-danger.mensajeError {
+  font-size: 0.7rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+
+ion-card {
+  width: 90%;
+  max-width: 800px;
+  background-image: url("../../../assets/background/splashback.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20px;
+  box-shadow:  0 0 2px #ffae00, 0 0 10px #ff9500, 0 0 20px #ff9500, 0 0 20px #ffae00, 0 0 20px #ff9100, 0 0 10px #ff9d00, 0 0 10px #ffa600;
+  position: fixed;
+  border-style: outset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-left: 5%;
+}
+
+
+
+.cardcontent {
+  margin-top: 0;
+  padding-bottom: 20px;
+  overflow: hidden;
+  min-height: 200px;
+  background: transparent;
+  flex: 1;
+  padding: 0;
+}
+
+.input-doble {
+  display: flex;
+  --background: white;
+  align-items: center;
+  --background: transparent;
+  border: none;
+  padding: 20px;
+}
+
+
+.input1 {
+  padding: 10px;
+  font-family: 'Josefin Sans', sans-serif;
+  margin-top: 0;
+  font-size: 20px;
+  color: black;
+  background: transparent;
+}
+
+
+.input2 {
+  padding: 10px;
+  font-family: 'Josefin Sans', sans-serif;
+  margin-top: 0;
+  font-size: 20px;
+  color: black;
+  background: transparent;
+}
+
+.icon-login {
+  --ionicon-stroke-width: 2px;
+  margin-right: 10px;
+  color: black;
+  justify-content: center;
+}
+
+
+//boton login
+.buttonion {
+  position: absolute;
+  --border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  --background: radial-gradient(circle at 50% -20.71%, #d7c35d 0, #deba54 8.33%, #e4b04d 16.67%, #e9a546 25%, #ed9841 33.33%, #f0893e 41.67%, #f2793c 50%, #f3673d 58.33%, #f35542 66.67%, #f34249 75%, #f22b52 83.33%, #f0065d 91.67%, #ec0069 100%);;
+  border: none;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+}
+
+
+.send {
+  font-size: 40px;
+  text-align: center;
+}
+
+//radiobuttons
+ion-radio {
+  --color-checked: black;
+  --color-checked-circle: black;
+  --color-unchecked: #b2bec3;
+  --color-unchecked-circle: #dfe6e9;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: 100px;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.radio {
+  --color: black;
+  --background: transparent;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+//SPINNER
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.custom-spinner img {
+  animation: rotate-center 1s ease-in-out infinite both;
+  max-width: 200px;
+  height: 200px;
+  opacity: 101;
+}
+
+.custom-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1011;
+  background-color: rgba(91, 91, 91, 0.601);
+  background-repeat: no-repeat;
+  background-size: 150px;
+  background-position: center;
+}
+
+.spinnerh1 {
+  font-family: 'Righteous', cursive;
+  position: absolute;
+  top: 200px;
+  font-size: 40px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}

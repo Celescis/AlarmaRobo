@@ -1,0 +1,76 @@
+<ion-content [fullscreen]="true" overflow-scroll="false" class="contenedor flex-container" scrollAssist="false" scrollPadding="false">
+  <ion-card-header>
+    <ion-header>
+      <ion-title class="centered-title titlei" color="light">INGRESAR</ion-title>
+    </ion-header>
+  </ion-card-header>
+
+  <ion-card>
+    <ion-card-content class="cardcontent">
+      <form id="login-form" (submit)="Login()">
+        <ion-item class="input-doble dark" full-width>
+          <ion-icon name="person" class="icon-login"></ion-icon>
+          <ion-input class="input1" aria-label="Correo" [clearOnEdit]="true" type="email" [formControl]="correo"
+            required placeholder="Correo" errorText="Correo invalido" helperText="Ingrese un correo valido"
+            full-width></ion-input>
+        </ion-item>
+
+        <div class="alert alert-danger mensajeError mt-1 bi bi-exclamation-octagon-fill"
+          [hidden]="correo.valid || (correo.pristine && correo.untouched)">
+          <span *ngIf="correo.errors?.['required']">
+            Este campo es obligatorio
+          </span>
+          <span *ngIf="correo.errors?.['email']">
+            Debe contener @
+          </span>
+        </div>
+
+        <ion-item class="input-doble" full-width>
+          <ion-icon name="key" class="icon-login"></ion-icon>
+          <ion-input class="input2" aria-label="Contraseña" [clearOnEdit]="true" type="password" required
+            placeholder="Contraseña" [formControl]="password" errorText="Contraseña incorrecta" [counter]="true"
+            maxlength="8" full-width></ion-input>
+        </ion-item>
+
+        <div class="alert alert-danger mensajeError mt-1 bi bi-exclamation-octagon-fill"
+          [hidden]="password.valid || (password.pristine && password.untouched)">
+          <span *ngIf="password.errors?.['required']">
+            Este campo es obligatorio
+          </span>
+          <span *ngIf="password.errors?.['minlength']">
+            Debe tener como minimo 6 caracteres
+          </span>
+        </div>
+
+        <div>
+          <ion-button class="buttonion" type="submit">
+            <ion-icon class="send" name="send"></ion-icon>
+          </ion-button>
+        </div>
+      </form>
+      
+      
+      <ion-list class="list">
+        <ion-radio-group [(ngModel)]="opcionSeleccionada" (ionChange)="CargaUsuarios()">
+          <ion-item class="radio">
+            <ion-radio value="admin">Administrador</ion-radio>
+          </ion-item>
+
+          <ion-item class="radio">
+            <ion-radio value="invitado">Invitado</ion-radio>
+          </ion-item>
+          
+          <ion-item class="radio">
+            <ion-radio value="usuario">Usuario</ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+
+    </ion-card-content>
+  </ion-card>
+     <!-- ******************************* SPINNER *******************************-->
+     <div *ngIf="showSpinner" class="custom-spinner">
+      <h1 class="spinnerh1">Cargando...</h1>
+      <img src="/assets/icon/icon.png" alt="Custom Spinner" />
+    </div>
+</ion-content>

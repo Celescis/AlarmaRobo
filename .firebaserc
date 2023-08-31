@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pruebaapp-7bd90": {
+      "hosting": {
+        "app": [
+          "pruebaapp-7bd90"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pruebaapp-7bd90"
+  }
+}

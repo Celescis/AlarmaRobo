@@ -1,0 +1,58 @@
+<ion-content noscroll>
+  <!-- ******************************* BOTON DESACTIVADO *******************************-->
+  <div *ngIf="!alarmActivated" style="width: 100%; height: 100%">
+    <!-- ******************************* LOGOUT *******************************-->
+    <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+      <ion-fab-button id="out-loading" (click)="logoutUser()"><ion-icon name="exit-outline" style="
+        color: rgb(255, 255, 255);
+        background: rgb(255, 0, 0);
+        padding: 5px;
+        font-size: 3rem;
+      "></ion-icon></ion-fab-button>
+    </ion-fab>
+
+    <ion-grid style="height: 100%; display: flex; flex-flow: column">
+      <ion-row style="flex-grow: 1">
+        <ion-col style="height: 100%" class="btn-desactivado" (click)="activateAlarm()">
+          <h1 class="h1class">TOQUE PARA ACTIVAR</h1>
+          <h1 class="h1class2">▼ ▼ ▼ ▼</h1>
+          <img src="/assets/background/iconhome.png" alt="" *ngIf="!alarmActivated" />
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+  <!-- ******************************* BOTON ACTIVADO *******************************-->
+  <div *ngIf="alarmActivated" style="width: 100%; height: 100%">
+    <ion-grid style="height: 100%; display: flex; flex-flow: column">
+      <ion-row style="flex-grow: 1; height: 100%; width: 100%; margin-bottom: 0px; padding-bottom: 0px;">
+        <ion-col style="height: 100%" class="btn-activado" (click)="showPasswordInput()">
+          <h1 class="h1class">TOQUE PARA DESACTIVAR</h1>
+          <h1 class="h1class2">▼ ▼ ▼ ▼</h1>
+          <img src="/assets/background/iconhome.png" alt="" class="colimg" />
+        </ion-col>
+      </ion-row>
+      <ion-row style="flex-grow: 1; height: 10%; width: 100%" *ngIf="passwordVisible">
+        <ion-col style="height: 10%; width: 100%">
+          <div>
+            <ion-item class="items">
+              <ion-input placeholder="Ingrese su clave" errorText="Contraseña incorrecta" style="color: black"
+                [(ngModel)]="password" name="clave" type="password" required color="dark" [counter]="true" maxlength="6"></ion-input>
+              <ion-button (click)="desactivateAlarm()" color="danger" style="margin-left: 10px;"><ion-icon color="light"
+                  name="send"></ion-icon></ion-button>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+  <!-- ******************************* SPINNER *******************************-->
+  <div *ngIf="pressedButton" class="custom-spinner">
+    <h1 class="spinnerh1">Cargando...</h1>
+    <img src="/assets/icon/icon.png" alt="Custom Spinner" />
+  </div>
+
+</ion-content>
